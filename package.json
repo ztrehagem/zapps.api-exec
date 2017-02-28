@@ -1,0 +1,22 @@
+{
+  "name": "zapps.api-exec",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ztrehagem/zapps.api-exec.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ztrehagem/zapps.api-exec/issues"
+  },
+  "homepage": "https://github.com/ztrehagem/zapps.api-exec#readme",
+  "dependencies": {
+    "z-elixir": "git+https://github.com/ztrehagem/z-elixir.git#v1.1.1"
+  }
+}
