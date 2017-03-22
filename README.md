@@ -28,7 +28,8 @@ AngularJS 1.x を用いたアプリケーションでAPIの実行に特化した
     - ex) `zpsApiExecProvider.urlPrefix('/api/v1');`
 - return urlPrefix : String
 
-### <a name="httpMethods"> zpsApiExecProvider.httpMethods([methods])
+### zpsApiExecProvider.httpMethods([methods])
+- set shorthand method for `zpsApiExec`
 - args
   - (option) methods : Array <String> (default: `['get', 'post', 'put', 'patch', 'options', 'delete']`)
 - return methods : Array
@@ -36,10 +37,10 @@ AngularJS 1.x を用いたアプリケーションでAPIの実行に特化した
 
 ## zpsApiExec
 
-`zpiApiExec` has some methods by [httpMethods](#httpMethods)
-
-### zpiApiExec.[methodname] (url [, params [, data [, options]]])
+### zpsApiExec(method, url [, params [, data [, options]]])
 - args
+  - method : String
+    - ex) `'get'` `'post'` etc
   - url : String
     - ex) `'/foo/bar'` `'http://example.com/foobar'`
   - (option) params : Object
@@ -50,3 +51,13 @@ AngularJS 1.x を用いたアプリケーションでAPIの実行に特化した
     - `multipartFormdata` : boolean (default: `false`)
       - convert `data` object to `FormData` and set Content-Type to `multipart/form-data`
 - returns $q deferred object same as $http service
+
+### zpsApiExec[methodname] (url [, params [, data [, options]]])
+- shorthand method to zpsApiExec
+```js
+zpsApiExec.get('/foo/:id', {id: 123})
+```
+equals
+```js
+zpsApiExec('get', '/foo/:id', {id: 123})
+```
